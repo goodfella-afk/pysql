@@ -23,6 +23,17 @@ for developer in developers:
 
 projektiset = set(projektilista)
 
+projects = {}
+
+for project in projektiset:
+  projects[project] = []
+  for developer in developers:
+    if project in developers[developer]:
+      projects[project].append(developer)
+
+print (projects)
+
+
 # c) izmijeni ime svakog projekta u projektislista kao bixbix_ime
 
 # def dodajpref (list, prefix):
@@ -40,6 +51,28 @@ projektiset = set(projektilista)
 print (list(map(lambda project:'BIXBIT_'+project,projektilista)))
 
 
+# d) 
+
+def dodajdev (developers, newdev):
+  developers.update(newdev)
+  devsum = len(developers)
+  print (developers, 'OVO JE BROJ DEVELOPERA: ', devsum)
 
 
+#driver code
 
+dodajdev (developers, {'mark':['BIXBIT','3gProxy']})
+
+# e) DODAJ ZARADU i vrijeme
+
+# def alterdict(developers, newspecs):
+
+def hmoney (pname,hours,money):
+  for developer in developers:
+    if pname in developers[developer]:
+      developers[developer]= [(pname,hours,money)]
+      # .........
+
+hmoney ('Company website', '150', 3000)
+print (developers)
+ 
